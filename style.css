@@ -1,0 +1,326 @@
+/* --- Global Styles --*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #0f0f0f;
+    --second-bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --main-color: #00ff88;
+    /*the neon green from the illustration*/
+    --accent-glow: rgba(0, 255, 136, 0.2);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+span {
+    color: var(--main-color);
+}
+
+/*-- NAVIGATION --*/
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /*Centers the entire nav bar*/
+}
+
+/*Ensure the list of links is also a flex container */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 35px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--main-color);
+}
+
+/*Hero section */
+
+.hero-btns a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 15px;
+    /*This creates space between the buttons */
+    font-weight: bold;
+}
+
+.hero-btns a:nth-child(2) {
+    background: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin: 20px 0 40px;
+    color: #ccc;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.btn.primary {
+    background: var(--main-color);
+    color: var(--bg-color);
+    margin-left: 15px;
+    margin-right: 20px !important;
+    /*This one ensures it overrrides other styles */
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 40px;
+    margin-right: 20px;
+    /*The magic space */
+}
+
+.btn.secondary {
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    margin-left: 20px;
+}
+
+.btn:hover {
+    box-shadow: none;
+    transform: translateY(-5px);
+}
+
+.hero-img .img-box {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid var(--main-color);
+    overflow: hidden;
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Skills section --- */
+.skills {
+    background: var(--second-bg-color);
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.section-container {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 45px;
+    margin-bottom: 50px;
+}
+
+.skill-card {
+    background: #252525;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: 0.4s;
+}
+
+.skill-card i {
+    font-size: 50px;
+    color: #ffffff !important;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.6));
+    transition: 0.3s;
+    font-size: 50px;
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+.skill-card:hover i {
+    color: var(--main-color) !important;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    border: 1px solid var(--main-color);
+    transform: scale(1.05);
+    background: var(--accent-glow);
+}
+
+/* -- Responsive design --*/
+@media (maxwidth: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: none;
+        /*Usually repalced with some menu */
+    }
+
+}
+
+.btn.primary,
+.btn.secondary {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#contact {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.contact-card i {
+    font-size: 2.5rem;
+    background: #111;
+    /*Dark card Background */
+    padding: 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    /*Removes the blue link line */
+    min-width: 250px;
+    border: 1px solid#333;
+    /*Subtle border */
+    transition: 0.4s ease;
+    /*Accounts for smooth slidings */
+    display: block;
+    /*Ensures the whole block is clickable*/
+     
+    /* Keeps the signature green for the icons. */
+    margin-bottom: 1rem;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    border-color: #00ff88;
+    background: #1a1a1a;
+    /*Slight highlight on hover! */
+    box-shadow: 0 10px 20px rgba(0, 255, 136, 0.1);
+}
+
+.contact-card i {
+    font-size: 2.5rem;
+    transition: 0.3s;
+    margin-bottom: 1rem;
+}
+
+/*Specific brand color*/
+.fa-phone {
+    color: #007bff;
+    /*Phone blue*/
+}
+
+.fa-whatsapp {
+    color: #25d366;
+    /*Whatsapp green*/
+}
+
+.fa-envelope {
+    color: #ea4335;
+    /*Gmail red*/
+}
+
+/*Styling the texts inside the card */
+.contact-card h3 {
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.contact-card p {
+    color: #888;
+    font-size: 0.9rem;
+}
+/*Hover Effect: Make them glow in their own color. */
+.contact-card:hover .fa-phone{
+    text-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+.contact-card:hover .fa-whatsapp{
+    text-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+}
+.contact-card:hover .fa-envelope{
+    text-shadow: 0 0 15px rgba(234, 67, 53, 0.5);
+}
