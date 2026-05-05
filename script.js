@@ -14,7 +14,7 @@ const greetingElement = document.querySelector('.greeting-text');
 
 greetingElement.innerHTML = greeting;
 var typed = new Typed(".typing", {
-    strings: ["Developer", "Designer", "Programmer", "Tech Creator", "Night Owl"],
+    strings: ["The Developer", "The Designer", "The Programmer", "The Tech Creator", "The Night Owl"],
     typeSpeed: 100,
     backSpeed: 60,
     loop: true
