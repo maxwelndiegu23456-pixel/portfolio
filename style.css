@@ -219,21 +219,6 @@ header {
     background: var(--accent-glow);
 }
 
-/* -- Responsive design --*/
-@media (maxwidth: 768px) {
-    .hero {
-        flex-direction: column-reverse;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .nav-links {
-        display: none;
-        /*Usually repalced with some menu */
-    }
-
-}
-
 .btn.primary,
 .btn.secondary {
     display: inline-block;
@@ -268,8 +253,6 @@ header {
     /*Accounts for smooth slidings */
     display: block;
     /*Ensures the whole block is clickable*/
-     
-    /* Keeps the signature green for the icons. */
     margin-bottom: 1rem;
 }
 
@@ -314,13 +297,98 @@ header {
     color: #888;
     font-size: 0.9rem;
 }
+
 /*Hover Effect: Make them glow in their own color. */
-.contact-card:hover .fa-phone{
+.contact-card:hover .fa-phone {
     text-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
 }
-.contact-card:hover .fa-whatsapp{
+
+.contact-card:hover .fa-whatsapp {
     text-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
 }
-.contact-card:hover .fa-envelope{
+
+.contact-card:hover .fa-envelope {
     text-shadow: 0 0 15px rgba(234, 67, 53, 0.5);
+}
+
+/*---MOBILE RESPONSIVENESS ---*/
+@media (max-width: 768px) {
+
+    /*Stack the text and image vertically*/
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 100px 5% 40px;
+    }
+
+    /*2. Adjust the typing text size for smaller screens*/
+    .home-content h1 {
+        font-size: 32px;
+    }
+
+    /*3.Make the profile image smaller */
+    .home-img img {
+        width: 250px;
+        height: 250px;
+    }
+
+    /*4. Make the contact cards stack instead of being in a row. */
+    .container-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        /*Stacks the images on top of the text */
+        height: auto;
+        padding: 120px 20px 40px;
+        /*Gives some breathing room at the top*/
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-img {
+        margin-top: 30px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /*Centers your buttons and text */
+    }
+
+    .home-img img {
+        width: 200px;
+        /*Makes the photos fit well on small screens */
+        height: 200px;
+    }
+
+    /*Fix the Navigation for Mobile */
+    .navbar {
+        flex-direction: column;
+        /*Stacks the Mz code and Links */
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 15px;
+        /*Brings links closer together */
+        font-size: 14px;
+        /*Makes the text slightly smaller to fit */
+    }
+
+}
+
+.container-container {
+    display: flex;
+    flex-direction: column;
 }
